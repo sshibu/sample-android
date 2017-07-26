@@ -18,6 +18,10 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import com.microsoft.azure.mobile.MobileCenter;
+import com.microsoft.azure.mobile.analytics.Analytics;
+import com.microsoft.azure.mobile.crashes.Crashes;
+
 public class RootActivity extends AppCompatActivity {
 
     /**
@@ -59,7 +63,8 @@ public class RootActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-
+        MobileCenter.start(getApplication(), "84fcd93b-d900-43ab-b914-f5986cff302a",
+                Analytics.class, Crashes.class);
     }
 
 
